@@ -14,22 +14,22 @@ let counter = 0;
  
 //selecting Eventlistener for 
 incrementButton.addEventListener("click", function () {
-    //count.innerText = counter;
     count.textContent = counter;
     counter++;
     
 });
 
 decrementButton.addEventListener("click", function () {
-    count.textContent = counter;
-    counter--;
-
-    if (counter == 0) {
+    if (count.textContent > 0) {
+        count.textContent = counter;
+        counter--;
+    } else {
        alert("Number cannot be negative")
     }
 })
 
 resetButton.addEventListener("click", function() {
-    count.textContent = counter;
-    counter = 0;
+    counter = 0;// select value first
+    count.textContent = counter;// then selecting textcontent
+    
 })
