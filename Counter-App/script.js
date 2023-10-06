@@ -33,3 +33,43 @@ resetButton.addEventListener("click", function() {
     count.textContent = counter;// then selecting textcontent
     
 })
+
+//OR (THIS IS ANOTHER EXAMPLE)
+
+
+// const count = document.getElementById('count');
+// const incrementButton = document.getElementById('increment');
+// const decrementButton = document.getElementById('decrement');
+// const resetButton = document.getElementById('reset');
+
+
+// let counter = 0;
+
+function updateCounter() {
+  countElement.textContent = counter;
+}
+
+incrementButton.addEventListener('click', () => {
+    counter++;
+    updateCounter();
+  });
+  
+
+decrementButton.addEventListener('click', () => {
+    if (countElement.textContent > 0) {
+        counter--;
+        updateCounter(); 
+    } else {
+        alert("Number cannot be negative!")
+    }
+  
+});
+
+
+resetButton.addEventListener('click', () => {
+  counter = 0;
+  updateCounter();
+});
+
+//initial display
+updateCounter();
